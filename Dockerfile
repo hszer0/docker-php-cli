@@ -5,4 +5,6 @@ RUN apt-get update && apt-get install -y $PHPIZE_DEPS \
     && docker-php-ext-enable xdebug \
     && docker-php-ext-install pdo_mysql \
     && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
-    && echo "xdebug.remote_autostart=off" >> /usr/local/etc/php/conf.d/xdebug.ini
+    && echo "xdebug.remote_autostart=off" >> /usr/local/etc/php/conf.d/xdebug.ini \
+    && docker-php-ext-install mysqli \
+    && docker-php-ext-enable mysqli
